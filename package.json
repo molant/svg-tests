@@ -19,6 +19,7 @@
   "dependencies": {
     "canvas-prebuilt": "^1.6.5-prerelease.1",
     "express": "^4.16.2",
-    "jsdom": "^11.5.1"
+    "jsdom": "^11.5.1",
+    "request": "^2.83.0"
   }
 }

@@ -6,6 +6,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.
 </svg>`;
 
 const express = require('express');
+const request = require('request');
 const app = express();
 
 app.get('/', function (req, res) {
@@ -33,4 +34,16 @@ function newApi() {
     });
 }
 
-app.listen(3000, newApi);
+function req() {
+    request.get('http://localhost:3000/image.svg', (err, res, body) => {
+        console.log('---------------');
+        console.log('Testing request\n');
+
+        console.log(body);
+
+        newApi();
+    })
+}
+
+
+app.listen(3000, req);
